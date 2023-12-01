@@ -1,0 +1,76 @@
+
+.search__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search__input-country {
+  max-width: 480px;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  flex-shrink: 0;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--general-color);
+  background-color: var(--dark-mode-color);
+  box-shadow: var(--box-shadow);
+}
+
+.search__form::before {
+  content: url(/src/images/searloop.svg);
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  margin-left: 10px;
+}
+
+.search__select {
+  width: 200px;
+  height: 56px;
+  padding-left: 5px;
+  flex-shrink: 0;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--general-color);
+  background-color: var(--dark-mode-color);
+  box-shadow: var(--box-shadow);
+}
+
+.select__option{
+	color: var(--general-color);
+}
+
+.form__select-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+}
+
+.search__btn {
+  width: fit-content;
+  padding: 17px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--general-color);
+  background-color: var(--dark-mode-color);
+  box-shadow: var(--box-shadow);
+  border: none;
+  cursor: pointer;
+}
+
+@media only  screen and (max-width:870px) {
+	.search__form{
+		flex-direction: column;
+		justify-content: start;
+		align-items: start;
+		gap: 40px;
+	}
+	.search__form::before{
+		margin-top: 15px;
+	}
+}

@@ -1,11 +1,11 @@
 import Header from "./components/header/header";
-import Cards from "./components/card/cardlist";
+import Main from "./components/main/main";
 
 function App() {
   return (
 	<>
 	<Header/>
-	<Cards/>
+	<Main/>
 	</>
   )
 }
