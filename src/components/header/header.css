@@ -1,0 +1,38 @@
+/* SITE HEADER */
+
+.header {
+	padding-top: 23px;
+	padding-bottom: 15px;
+	box-shadow: var(--box-shadow);
+	background-color: var(--dark-mode-color);
+  }
+  
+  .header__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
+  
+  .header__heading {
+	color: var(--general-color);
+	font-size: 24px;
+	font-weight: 800;
+	line-height: normal;
+  }
+  
+  .header__button {
+	padding: 12px;
+	border: none;
+	color: var(--general-color);
+	background-color: transparent;
+	cursor: pointer;
+  }
+  
+  .header__button::before {
+	content: url(/src/images/darkmode.svg);
+	width: 18px;
+	position: relative;
+	top: 3px;
+	margin-right: 5px;
+  }
+  

@@ -1,13 +1,109 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*  UTILS */
+
+:root {
+	--bg-color: #202c36;
+	--dark-mode-color: #2b3844;
+	--general-color: #fff;
+	--box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.14);
+  }
+  
+/* GLOBAL */
+html {
+  box-sizing: border-box;
+  height: 100%;
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* CONTAINER */
+.container {
+  width: 100%;
+  max-width: 1312px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: "Arial", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	background-color: var(--bg-color);
+	color: var(--general-color);
+  }
+
+/* WHITE MODE  */
+
+.body-white-mode{
+	background-color: var(--general-color);
+	color: var(--dark-mode-color);
+}
+
+.body-white-mode 
+.header  {
+	background-color: var(--general-color);
+}
+
+.body-white-mode 
+.header__heading  {
+	color: var(--dark-mode-color);
+}
+
+.body-white-mode 
+.header__button  {
+	color: var(--dark-mode-color);
+}
+
+.body-white-mode 
+ .search__input-country {
+	color: var(--dark-mode-color);
+	background-color: var(--general-color);
+}
+
+.body-white-mode 
+ .search__select {
+	color: var(--dark-mode-color);
+	background-color: var(--general-color);
+}
+
+.body-white-mode 
+ .search__btn {
+	color: var(--dark-mode-color);
+	background-color: var(--general-color);
+}
+
+.body-white-mode 
+ .card {
+	background-color: var(--general-color);
+}
+
+.body-white-mode 
+ .content__heading {
+	color: var(--dark-mode-color);
+}
+
+.body-white-mode 
+ .card__info__extra {
+	color: var(--dark-mode-color);
+}
+ 
+.body-white-mode
+.select__option{
+	color: var(--dark-mode-color);
 }

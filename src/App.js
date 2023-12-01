@@ -1,6 +1,13 @@
+import Header from "./components/header/header";
+import Cards from "./components/card/cardlist";
 
 function App() {
-  return 
+  return (
+	<>
+	<Header/>
+	<Cards/>
+	</>
+  )
 }
 
 export default App;
