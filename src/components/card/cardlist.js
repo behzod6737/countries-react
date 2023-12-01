@@ -5,7 +5,7 @@ import Card from "./card";
 const Cards = () => {
 const countries = [
 	{
-		src: '//unsplash.it/267/160',
+		src: 'https://picsum.photos/267/160',
 		title: 'Uzbekistan',
 		population: '37.000.000',
 		region: 'asia',
