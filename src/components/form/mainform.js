@@ -3,8 +3,7 @@ import "./mainform.css";
 import SearchInput from "./searchinput";
 import SelectInput from "./selectinput";
 
-const Form = () => {
-
+const Form = ({ renderRegions }) => {
   return (
     <section className="section-search">
       <div className="container">
@@ -14,7 +13,7 @@ const Form = () => {
           method="get"
         >
           <SearchInput />
-         <SelectInput />
+          <SelectInput renderRegions={renderRegions} />
         </form>
       </div>
     </section>

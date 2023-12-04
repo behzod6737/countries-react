@@ -11,4 +11,4 @@ const SearchInput = () => {
   );
 };
 
-export default SearchInput
+export default SearchInput;
