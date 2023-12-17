@@ -6,23 +6,33 @@ function App() {
   let [countryData, setData] = useState([]);
   let [isWhite, setWhite] = useState(false);
 
+  let [getLoading, setLoading] = useState(false);
+  let [getError, setError] = useState(null);
+
   useEffect(() => {
-    fetch(" https://restcountries.com/v3.1/all")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        return console.log(data);
-      })
-      .catch((error) => console.error(error));
-  }, []);
+    (async function () {
+		setLoading(true)
+      let res = await fetch(" https://restcountries.com/v3.1/all");
+      if (!res.ok) {
+		setLoading(false)
+		setError(res.status)
+        throw new Error(res.status);
+      }
+      res = await res.json();
+	  setLoading(false)
+	  setError(null)
+      setData(res);
+    })();
+}, []);
+
 
   return (
     <div className={`body  ${isWhite ? "body-white-mode" : ""} `}>
       <Header whiteMode={isWhite} setWhite={setWhite} />
-      <Main countries={countryData} />
+      <Main countries={countryData} getError={getError} getLoading={getLoading}/>
+     
     </div>
   );
 }
-
 
 export default App;
