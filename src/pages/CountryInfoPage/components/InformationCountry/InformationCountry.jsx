@@ -19,10 +19,9 @@ export const InformationCountry = ({currentData}) => {
 		</ul>
 		 
 		 <ul className="info-content__list">
+			<li className="info-item"><strong className="item__strong">Flag:</strong><span className="info-item__desc"> {currentData.flag}</span></li>
 			<li className="info-item"><strong className="item__strong">Area:</strong><span className="info-item__desc"> {areaData}</span></li>
 			<li className="info-item"><strong className="item__strong">Continent:</strong><span className="info-item__desc"> {currentData.continents}</span></li>
-			<li className="info-item"><strong className="item__strong">Flag:</strong><span className="info-item__desc"> {currentData.flag}</span></li>
-			<li className="info-item"><strong className="item__strong">Timezone:</strong><span className="info-item__desc"> {currentData.timezones}</span></li>
 			<li className="info-item"><strong className="item__strong">Top Level Domain:</strong><span className="info-item__desc"> {currentData.tld[0]}</span></li>
 		 </ul>
 		</div>

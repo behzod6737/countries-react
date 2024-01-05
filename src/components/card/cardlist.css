@@ -19,10 +19,15 @@
 	width: 100%;
 	flex-shrink: 0;
 	background-color: var(--dark-mode-color);
-	border-radius: 5px;
+	border-radius: 8px;
 	box-shadow: var(--box-shadow);
 	overflow: hidden;
+	transition: transform 250ms ease;
 
+  }
+
+  .card:hover{
+	transform: translateY(-5px);
   }
   .card__img {
 	display: block;
