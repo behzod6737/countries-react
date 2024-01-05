@@ -23,7 +23,7 @@ const Header = ({ whiteMode, setWhite }) => {
           type="submit"
           onClick={handleClick}
         >
-          dark mode
+          Dark Mode
         </button>
       </div>
     </header>

@@ -1,0 +1,13 @@
+.border-name {
+	width: fit-content;
+	color: white;
+  font-family: Nunito Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding: 5px 27px;
+  border-radius: 2px;
+  background-color: #2b3844;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
+}

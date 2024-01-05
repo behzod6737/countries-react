@@ -9,6 +9,7 @@ const Cards = ({ renderCountries }) => {
         <div className="countries__wrapper">
           {renderCountries.map((country, ind) => (
             <Card
+              id={country.name.common}
               key={ind}
               imgUrl={country.flags.png}
               title={country.name.common}

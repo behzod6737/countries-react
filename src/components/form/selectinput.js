@@ -1,27 +1,38 @@
-import React from "react";
+import { useContext, useEffect, useState } from "react";
 import Option, { OptionDisabled } from "./optioninput";
+import { countriesContext } from "../../context/countries";
 
-const SelectInput = ({ renderRegions }) => {
-  let newRegions = [];
+const SelectInput = () => {
+  
+  const { setSearch, filter, setFilter,regions } = useContext(countriesContext);
 
-  for (const country of renderRegions) {
-    if (newRegions.includes(country.region)) {
-      continue;
-    } else newRegions.push(country.region);
-  }
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
-    <div className="form__select-inner">
-      <select className="search__select" name="country">
-        <OptionDisabled />
-        {newRegions.map((region, index) => (
-          <Option key={index} regionValue={region} regionName={region} />
+    <form
+      action="https://echo.htmlacademy.ru/"
+      method="GET"
+      className="form__select-inner"
+      onSubmit={handleSubmit}
+    >
+      <select
+        value={filter}
+        onChange={(e) => {
+          setSearch("");
+          setFilter(e.target.value);
+        }}
+        className="search__select"
+        name="country"
+      >
+        <Option regionValue={''} regionName={"All"} />
+        {regions.map((reg, index) => (
+          <Option key={index} regionValue={reg} regionName={reg} />
         ))}
       </select>
-      <button className="search__btn" type="submit">
-        go
-      </button>
-    </div>
+    </form>
   );
 };
 

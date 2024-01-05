@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./main.css";
 import Form from "../form/mainform";
 import Cards from "../card/cardlist";
 import { Loading } from "../loading/loading";
 import { Error } from "../error/error";
+import { countriesContext } from "../../context/countries";
 
-const Main = ({ countries,getLoading,getError }) => {
+const Main = () => {
+	const {getError,getLoading,countryData} = useContext(countriesContext)
   return (
     <main className="site-main">
-      <Form renderRegions={countries} />
+      <Form />
 	  {getLoading && <Loading />}
 	  {getError && <Error />}
-      <Cards renderCountries={countries} />
+      <Cards renderCountries={countryData} />
     </main>
   );
 };

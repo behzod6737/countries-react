@@ -1,38 +1,28 @@
-import { useEffect, useState } from "react";
-import Header from "./components/header/header";
-import Main from "./components/main/main";
+import { Route, Routes } from "react-router-dom";
+import { CountriesPage } from "./pages/Countries/CountriesPage";
+import { CountryInfo } from "./pages/CountryInfoPage/CountryInfo";
+import { countriesContext } from "./context/countries";
+import { useContext } from "react";
+
+export const API = "https://restcountries.com/v3.1/";
+
+export async function fetchAPI(query) {
+	let res = await fetch(API + query);
+	if (!res.ok) {
+	  return {data:null,loading:false,error:true,status:res.status}
+	}
+	let data = await res.json()
+	return  {data:data,loading:false,error:false}
+  }
 
 function App() {
-  let [countryData, setData] = useState([]);
-  let [isWhite, setWhite] = useState(false);
-
-  let [getLoading, setLoading] = useState(false);
-  let [getError, setError] = useState(null);
-
-  useEffect(() => {
-    (async function () {
-		setLoading(true)
-      let res = await fetch(" https://restcountries.com/v3.1/all");
-      if (!res.ok) {
-		setLoading(false)
-		setError(res.status)
-        throw new Error(res.status);
-      }
-      res = await res.json();
-	  setLoading(false)
-	  setError(null)
-      setData(res);
-    })();
-}, []);
-
-
+	const {countryData,setData} = useContext(countriesContext)
   return (
-    <div className={`body  ${isWhite ? "body-white-mode" : ""} `}>
-      <Header whiteMode={isWhite} setWhite={setWhite} />
-      <Main countries={countryData} getError={getError} getLoading={getLoading}/>
-     
-    </div>
-  );
+	<Routes>
+		<Route path="/" element={<CountriesPage />}/>
+		<Route path="countries/:id" element={<CountryInfo countryData={countryData} />} />
+	</Routes>
+  )
 }
 
 export default App;
